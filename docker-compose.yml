@@ -1,0 +1,13 @@
+# Veriosn of docker-composer
+version: "3"
+# Service that make application
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0.8000"
